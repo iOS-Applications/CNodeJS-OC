@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>iconfont name</key>
+	<string>Material Icons</string>
+	<key>color</key>
+	<dict>
+		<key>primary color</key>
+		<string>#8bc34a</string>
+		<key>dark primary color</key>
+		<string>#679f38</string>
+		<key>light primary color</key>
+		<string></string>
+		<key>primary text color</key>
+		<string></string>
+		<key>secondary text color</key>
+		<string>#727272</string>
+		<key>divider color</key>
+		<string>#6b6b6b</string>
+	</dict>
+</dict>
+</plist>

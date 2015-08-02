@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2BDCD738A4EB761B2A11D32A /* libPods-CNodeJS-OC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 117617BBDA7A33D6952AAA6B /* libPods-CNodeJS-OC.a */; };
+		2F85E02C1B6E7B1600F17FFB /* MainMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E01B1B6E7B1600F17FFB /* MainMessageViewController.m */; };
+		2F85E02D1B6E7B1600F17FFB /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E01D1B6E7B1600F17FFB /* MainNavigationController.m */; };
+		2F85E02E1B6E7B1600F17FFB /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E01F1B6E7B1600F17FFB /* MainTabBarController.m */; };
+		2F85E02F1B6E7B1600F17FFB /* MainUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E0211B6E7B1600F17FFB /* MainUserViewController.m */; };
+		2F85E0301B6E7B1600F17FFB /* SwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E0231B6E7B1600F17FFB /* SwipableViewController.m */; };
+		2F85E0311B6E7B1600F17FFB /* SwipableViewDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E0251B6E7B1600F17FFB /* SwipableViewDataProvider.m */; };
+		2F85E0321B6E7B1600F17FFB /* TableViewDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E0271B6E7B1600F17FFB /* TableViewDataProvider.m */; };
+		2F85E0331B6E7B1600F17FFB /* TopicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E0291B6E7B1600F17FFB /* TopicDetailViewController.m */; };
+		2F85E0341B6E7B1600F17FFB /* TopicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E02B1B6E7B1600F17FFB /* TopicTableViewController.m */; };
+		2F85E03A1B6E7B4200F17FFB /* IconFontTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E0371B6E7B4200F17FFB /* IconFontTabBarItem.m */; };
+		2F85E03B1B6E7B4200F17FFB /* TopicViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F85E0391B6E7B4200F17FFB /* TopicViewCell.m */; };
+		2F85E0401B6E7B7100F17FFB /* CNodeJS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F85E03D1B6E7B7100F17FFB /* CNodeJS.plist */; };
+		2F85E0411B6E7B7100F17FFB /* cnodejs.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F85E03E1B6E7B7100F17FFB /* cnodejs.png */; };
+		2F85E0421B6E7B7100F17FFB /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F85E03F1B6E7B7100F17FFB /* MaterialIcons-Regular.ttf */; };
+		2F985E281B6E770000C39FCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F985E271B6E770000C39FCE /* main.m */; };
+		2F985E2B1B6E770000C39FCE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F985E2A1B6E770000C39FCE /* AppDelegate.m */; };
+		2F985E2E1B6E770000C39FCE /* CNodeJS_OC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F985E2C1B6E770000C39FCE /* CNodeJS_OC.xcdatamodeld */; };
+		2F985E341B6E770000C39FCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F985E321B6E770000C39FCE /* Main.storyboard */; };
+		2F985E361B6E770000C39FCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F985E351B6E770000C39FCE /* Images.xcassets */; };
+		2F985E391B6E770000C39FCE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F985E371B6E770000C39FCE /* LaunchScreen.xib */; };
+		2F985E451B6E770000C39FCE /* CNodeJS_OCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F985E441B6E770000C39FCE /* CNodeJS_OCTests.m */; };
+		2F985E4F1B6E77E300C39FCE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2F985E4E1B6E77E300C39FCE /* README.md */; };
+		2FB4D8DF1B6E7AA500E8E9C5 /* CNodeAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8D61B6E7AA500E8E9C5 /* CNodeAPI.m */; };
+		2FB4D8E01B6E7AA500E8E9C5 /* CNodeBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8D81B6E7AA500E8E9C5 /* CNodeBase.m */; };
+		2FB4D8E11B6E7AA500E8E9C5 /* CNodeReply.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8DA1B6E7AA500E8E9C5 /* CNodeReply.m */; };
+		2FB4D8E21B6E7AA500E8E9C5 /* CNodeTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8DC1B6E7AA500E8E9C5 /* CNodeTopic.m */; };
+		2FB4D8E31B6E7AA500E8E9C5 /* CNodeUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8DE1B6E7AA500E8E9C5 /* CNodeUser.m */; };
+		2FB4D8EF1B6E7AD500E8E9C5 /* AppDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8E81B6E7AD500E8E9C5 /* AppDefaults.m */; };
+		2FB4D8F01B6E7AD500E8E9C5 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8EA1B6E7AD500E8E9C5 /* Device.m */; };
+		2FB4D8F11B6E7AD500E8E9C5 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8EC1B6E7AD500E8E9C5 /* NSString+Size.m */; };
+		2FB4D8F21B6E7AD500E8E9C5 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4D8EE1B6E7AD500E8E9C5 /* UIColor+Hex.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F985E3F1B6E770000C39FCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F985E1A1B6E76FF00C39FCE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F985E211B6E770000C39FCE;
+			remoteInfo = "CNodeJS-OC";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		117617BBDA7A33D6952AAA6B /* libPods-CNodeJS-OC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CNodeJS-OC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F85E01A1B6E7B1600F17FFB /* MainMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMessageViewController.h; path = Controllers/MainMessageViewController.h; sourceTree = "<group>"; };
+		2F85E01B1B6E7B1600F17FFB /* MainMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMessageViewController.m; path = Controllers/MainMessageViewController.m; sourceTree = "<group>"; };
+		2F85E01C1B6E7B1600F17FFB /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainNavigationController.h; path = Controllers/MainNavigationController.h; sourceTree = "<group>"; };
+		2F85E01D1B6E7B1600F17FFB /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainNavigationController.m; path = Controllers/MainNavigationController.m; sourceTree = "<group>"; };
+		2F85E01E1B6E7B1600F17FFB /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarController.h; path = Controllers/MainTabBarController.h; sourceTree = "<group>"; };
+		2F85E01F1B6E7B1600F17FFB /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = Controllers/MainTabBarController.m; sourceTree = "<group>"; };
+		2F85E0201B6E7B1600F17FFB /* MainUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainUserViewController.h; path = Controllers/MainUserViewController.h; sourceTree = "<group>"; };
+		2F85E0211B6E7B1600F17FFB /* MainUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainUserViewController.m; path = Controllers/MainUserViewController.m; sourceTree = "<group>"; };
+		2F85E0221B6E7B1600F17FFB /* SwipableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipableViewController.h; path = Controllers/SwipableViewController.h; sourceTree = "<group>"; };
+		2F85E0231B6E7B1600F17FFB /* SwipableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipableViewController.m; path = Controllers/SwipableViewController.m; sourceTree = "<group>"; };
+		2F85E0241B6E7B1600F17FFB /* SwipableViewDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipableViewDataProvider.h; path = Controllers/SwipableViewDataProvider.h; sourceTree = "<group>"; };
+		2F85E0251B6E7B1600F17FFB /* SwipableViewDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipableViewDataProvider.m; path = Controllers/SwipableViewDataProvider.m; sourceTree = "<group>"; };
+		2F85E0261B6E7B1600F17FFB /* TableViewDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewDataProvider.h; path = Controllers/TableViewDataProvider.h; sourceTree = "<group>"; };
+		2F85E0271B6E7B1600F17FFB /* TableViewDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewDataProvider.m; path = Controllers/TableViewDataProvider.m; sourceTree = "<group>"; };
+		2F85E0281B6E7B1600F17FFB /* TopicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicDetailViewController.h; path = Controllers/TopicDetailViewController.h; sourceTree = "<group>"; };
+		2F85E0291B6E7B1600F17FFB /* TopicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicDetailViewController.m; path = Controllers/TopicDetailViewController.m; sourceTree = "<group>"; };
+		2F85E02A1B6E7B1600F17FFB /* TopicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicTableViewController.h; path = Controllers/TopicTableViewController.h; sourceTree = "<group>"; };
+		2F85E02B1B6E7B1600F17FFB /* TopicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicTableViewController.m; path = Controllers/TopicTableViewController.m; sourceTree = "<group>"; };
+		2F85E0361B6E7B4200F17FFB /* IconFontTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IconFontTabBarItem.h; path = Views/IconFontTabBarItem.h; sourceTree = "<group>"; };
+		2F85E0371B6E7B4200F17FFB /* IconFontTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IconFontTabBarItem.m; path = Views/IconFontTabBarItem.m; sourceTree = "<group>"; };
+		2F85E0381B6E7B4200F17FFB /* TopicViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TopicViewCell.h; path = Views/TopicViewCell.h; sourceTree = "<group>"; };
+		2F85E0391B6E7B4200F17FFB /* TopicViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TopicViewCell.m; path = Views/TopicViewCell.m; sourceTree = "<group>"; };
+		2F85E03D1B6E7B7100F17FFB /* CNodeJS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CNodeJS.plist; path = Resources/CNodeJS.plist; sourceTree = "<group>"; };
+		2F85E03E1B6E7B7100F17FFB /* cnodejs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cnodejs.png; path = Resources/cnodejs.png; sourceTree = "<group>"; };
+		2F85E03F1B6E7B7100F17FFB /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MaterialIcons-Regular.ttf"; path = "Resources/MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
+		2F85E0461B6E7ED200F17FFB /* CNodeJS.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNodeJS.pch; sourceTree = "<group>"; };
+		2F985E221B6E770000C39FCE /* CNodeJS-OC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CNodeJS-OC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F985E261B6E770000C39FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F985E271B6E770000C39FCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2F985E291B6E770000C39FCE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2F985E2A1B6E770000C39FCE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2F985E2D1B6E770000C39FCE /* CNodeJS_OC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CNodeJS_OC.xcdatamodel; sourceTree = "<group>"; };
+		2F985E331B6E770000C39FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F985E351B6E770000C39FCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2F985E381B6E770000C39FCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2F985E3E1B6E770000C39FCE /* CNodeJS-OCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CNodeJS-OCTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F985E431B6E770000C39FCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F985E441B6E770000C39FCE /* CNodeJS_OCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNodeJS_OCTests.m; sourceTree = "<group>"; };
+		2F985E4E1B6E77E300C39FCE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2FB4D8D51B6E7AA500E8E9C5 /* CNodeAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNodeAPI.h; path = API/CNodeAPI.h; sourceTree = "<group>"; };
+		2FB4D8D61B6E7AA500E8E9C5 /* CNodeAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNodeAPI.m; path = API/CNodeAPI.m; sourceTree = "<group>"; };
+		2FB4D8D71B6E7AA500E8E9C5 /* CNodeBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNodeBase.h; path = API/CNodeBase.h; sourceTree = "<group>"; };
+		2FB4D8D81B6E7AA500E8E9C5 /* CNodeBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNodeBase.m; path = API/CNodeBase.m; sourceTree = "<group>"; };
+		2FB4D8D91B6E7AA500E8E9C5 /* CNodeReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNodeReply.h; path = API/CNodeReply.h; sourceTree = "<group>"; };
+		2FB4D8DA1B6E7AA500E8E9C5 /* CNodeReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNodeReply.m; path = API/CNodeReply.m; sourceTree = "<group>"; };
+		2FB4D8DB1B6E7AA500E8E9C5 /* CNodeTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNodeTopic.h; path = API/CNodeTopic.h; sourceTree = "<group>"; };
+		2FB4D8DC1B6E7AA500E8E9C5 /* CNodeTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNodeTopic.m; path = API/CNodeTopic.m; sourceTree = "<group>"; };
+		2FB4D8DD1B6E7AA500E8E9C5 /* CNodeUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CNodeUser.h; path = API/CNodeUser.h; sourceTree = "<group>"; };
+		2FB4D8DE1B6E7AA500E8E9C5 /* CNodeUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CNodeUser.m; path = API/CNodeUser.m; sourceTree = "<group>"; };
+		2FB4D8E71B6E7AD500E8E9C5 /* AppDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDefaults.h; path = Common/AppDefaults.h; sourceTree = "<group>"; };
+		2FB4D8E81B6E7AD500E8E9C5 /* AppDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDefaults.m; path = Common/AppDefaults.m; sourceTree = "<group>"; };
+		2FB4D8E91B6E7AD500E8E9C5 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Device.h; path = Common/Device.h; sourceTree = "<group>"; };
+		2FB4D8EA1B6E7AD500E8E9C5 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Device.m; path = Common/Device.m; sourceTree = "<group>"; };
+		2FB4D8EB1B6E7AD500E8E9C5 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Size.h"; path = "Common/NSString+Size.h"; sourceTree = "<group>"; };
+		2FB4D8EC1B6E7AD500E8E9C5 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Size.m"; path = "Common/NSString+Size.m"; sourceTree = "<group>"; };
+		2FB4D8ED1B6E7AD500E8E9C5 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "Common/UIColor+Hex.h"; sourceTree = "<group>"; };
+		2FB4D8EE1B6E7AD500E8E9C5 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "Common/UIColor+Hex.m"; sourceTree = "<group>"; };
+		4EB0F79CEBFEEA6729EBA027 /* Pods-CNodeJS-OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNodeJS-OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNodeJS-OC/Pods-CNodeJS-OC.release.xcconfig"; sourceTree = "<group>"; };
+		7FA9FC8960F7AEE3E1E98019 /* Pods-CNodeJS-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNodeJS-OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNodeJS-OC/Pods-CNodeJS-OC.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F985E1F1B6E770000C39FCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BDCD738A4EB761B2A11D32A /* libPods-CNodeJS-OC.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F985E3B1B6E770000C39FCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F85E0351B6E7B1C00F17FFB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2F85E01A1B6E7B1600F17FFB /* MainMessageViewController.h */,
+				2F85E01B1B6E7B1600F17FFB /* MainMessageViewController.m */,
+				2F85E01C1B6E7B1600F17FFB /* MainNavigationController.h */,
+				2F85E01D1B6E7B1600F17FFB /* MainNavigationController.m */,
+				2F85E01E1B6E7B1600F17FFB /* MainTabBarController.h */,
+				2F85E01F1B6E7B1600F17FFB /* MainTabBarController.m */,
+				2F85E0201B6E7B1600F17FFB /* MainUserViewController.h */,
+				2F85E0211B6E7B1600F17FFB /* MainUserViewController.m */,
+				2F85E0221B6E7B1600F17FFB /* SwipableViewController.h */,
+				2F85E0231B6E7B1600F17FFB /* SwipableViewController.m */,
+				2F85E0241B6E7B1600F17FFB /* SwipableViewDataProvider.h */,
+				2F85E0251B6E7B1600F17FFB /* SwipableViewDataProvider.m */,
+				2F85E0261B6E7B1600F17FFB /* TableViewDataProvider.h */,
+				2F85E0271B6E7B1600F17FFB /* TableViewDataProvider.m */,
+				2F85E0281B6E7B1600F17FFB /* TopicDetailViewController.h */,
+				2F85E0291B6E7B1600F17FFB /* TopicDetailViewController.m */,
+				2F85E02A1B6E7B1600F17FFB /* TopicTableViewController.h */,
+				2F85E02B1B6E7B1600F17FFB /* TopicTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2F85E03C1B6E7B4600F17FFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F985E321B6E770000C39FCE /* Main.storyboard */,
+				2F985E371B6E770000C39FCE /* LaunchScreen.xib */,
+				2F85E0361B6E7B4200F17FFB /* IconFontTabBarItem.h */,
+				2F85E0371B6E7B4200F17FFB /* IconFontTabBarItem.m */,
+				2F85E0381B6E7B4200F17FFB /* TopicViewCell.h */,
+				2F85E0391B6E7B4200F17FFB /* TopicViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2F85E0431B6E7B7700F17FFB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F85E03D1B6E7B7100F17FFB /* CNodeJS.plist */,
+				2F85E03E1B6E7B7100F17FFB /* cnodejs.png */,
+				2F85E03F1B6E7B7100F17FFB /* MaterialIcons-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2F985E191B6E76FF00C39FCE = {
+			isa = PBXGroup;
+			children = (
+				2F985E241B6E770000C39FCE /* CNodeJS-OC */,
+				2F985E411B6E770000C39FCE /* CNodeJS-OCTests */,
+				2F985E231B6E770000C39FCE /* Products */,
+				6E9A710A808DEB62BF175F7B /* Pods */,
+				2FAB39236210B2D39B09E90B /* Frameworks */,
+				2F985E4E1B6E77E300C39FCE /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		2F985E231B6E770000C39FCE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F985E221B6E770000C39FCE /* CNodeJS-OC.app */,
+				2F985E3E1B6E770000C39FCE /* CNodeJS-OCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F985E241B6E770000C39FCE /* CNodeJS-OC */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4D8E41B6E7AAC00E8E9C5 /* API */,
+				2FB4D8F31B6E7ADD00E8E9C5 /* Common */,
+				2F85E0351B6E7B1C00F17FFB /* Controllers */,
+				2F85E03C1B6E7B4600F17FFB /* Views */,
+				2F85E0431B6E7B7700F17FFB /* Resources */,
+				2F985E351B6E770000C39FCE /* Images.xcassets */,
+				2F985E291B6E770000C39FCE /* AppDelegate.h */,
+				2F985E2A1B6E770000C39FCE /* AppDelegate.m */,
+				2F985E2C1B6E770000C39FCE /* CNodeJS_OC.xcdatamodeld */,
+				2F985E251B6E770000C39FCE /* Supporting Files */,
+			);
+			path = "CNodeJS-OC";
+			sourceTree = "<group>";
+		};
+		2F985E251B6E770000C39FCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F85E0461B6E7ED200F17FFB /* CNodeJS.pch */,
+				2F985E261B6E770000C39FCE /* Info.plist */,
+				2F985E271B6E770000C39FCE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F985E411B6E770000C39FCE /* CNodeJS-OCTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F985E441B6E770000C39FCE /* CNodeJS_OCTests.m */,
+				2F985E421B6E770000C39FCE /* Supporting Files */,
+			);
+			path = "CNodeJS-OCTests";
+			sourceTree = "<group>";
+		};
+		2F985E421B6E770000C39FCE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F985E431B6E770000C39FCE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FAB39236210B2D39B09E90B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				117617BBDA7A33D6952AAA6B /* libPods-CNodeJS-OC.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FB4D8E41B6E7AAC00E8E9C5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4D8D51B6E7AA500E8E9C5 /* CNodeAPI.h */,
+				2FB4D8D61B6E7AA500E8E9C5 /* CNodeAPI.m */,
+				2FB4D8D71B6E7AA500E8E9C5 /* CNodeBase.h */,
+				2FB4D8D81B6E7AA500E8E9C5 /* CNodeBase.m */,
+				2FB4D8D91B6E7AA500E8E9C5 /* CNodeReply.h */,
+				2FB4D8DA1B6E7AA500E8E9C5 /* CNodeReply.m */,
+				2FB4D8DB1B6E7AA500E8E9C5 /* CNodeTopic.h */,
+				2FB4D8DC1B6E7AA500E8E9C5 /* CNodeTopic.m */,
+				2FB4D8DD1B6E7AA500E8E9C5 /* CNodeUser.h */,
+				2FB4D8DE1B6E7AA500E8E9C5 /* CNodeUser.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		2FB4D8F31B6E7ADD00E8E9C5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2FB4D8E71B6E7AD500E8E9C5 /* AppDefaults.h */,
+				2FB4D8E81B6E7AD500E8E9C5 /* AppDefaults.m */,
+				2FB4D8E91B6E7AD500E8E9C5 /* Device.h */,
+				2FB4D8EA1B6E7AD500E8E9C5 /* Device.m */,
+				2FB4D8EB1B6E7AD500E8E9C5 /* NSString+Size.h */,
+				2FB4D8EC1B6E7AD500E8E9C5 /* NSString+Size.m */,
+				2FB4D8ED1B6E7AD500E8E9C5 /* UIColor+Hex.h */,
+				2FB4D8EE1B6E7AD500E8E9C5 /* UIColor+Hex.m */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		6E9A710A808DEB62BF175F7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FA9FC8960F7AEE3E1E98019 /* Pods-CNodeJS-OC.debug.xcconfig */,
+				4EB0F79CEBFEEA6729EBA027 /* Pods-CNodeJS-OC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F985E211B6E770000C39FCE /* CNodeJS-OC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F985E481B6E770000C39FCE /* Build configuration list for PBXNativeTarget "CNodeJS-OC" */;
+			buildPhases = (
+				FAB221637C4EBB8E6527D06C /* Check Pods Manifest.lock */,
+				2F985E1E1B6E770000C39FCE /* Sources */,
+				2F985E1F1B6E770000C39FCE /* Frameworks */,
+				2F985E201B6E770000C39FCE /* Resources */,
+				C98AB7CC2CA4B5FA6923D4A2 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CNodeJS-OC";
+			productName = "CNodeJS-OC";
+			productReference = 2F985E221B6E770000C39FCE /* CNodeJS-OC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2F985E3D1B6E770000C39FCE /* CNodeJS-OCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F985E4B1B6E770000C39FCE /* Build configuration list for PBXNativeTarget "CNodeJS-OCTests" */;
+			buildPhases = (
+				2F985E3A1B6E770000C39FCE /* Sources */,
+				2F985E3B1B6E770000C39FCE /* Frameworks */,
+				2F985E3C1B6E770000C39FCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F985E401B6E770000C39FCE /* PBXTargetDependency */,
+			);
+			name = "CNodeJS-OCTests";
+			productName = "CNodeJS-OCTests";
+			productReference = 2F985E3E1B6E770000C39FCE /* CNodeJS-OCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F985E1A1B6E76FF00C39FCE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Janrin.zh;
+				TargetAttributes = {
+					2F985E211B6E770000C39FCE = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					2F985E3D1B6E770000C39FCE = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 2F985E211B6E770000C39FCE;
+					};
+				};
+			};
+			buildConfigurationList = 2F985E1D1B6E76FF00C39FCE /* Build configuration list for PBXProject "CNodeJS-OC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2F985E191B6E76FF00C39FCE;
+			productRefGroup = 2F985E231B6E770000C39FCE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F985E211B6E770000C39FCE /* CNodeJS-OC */,
+				2F985E3D1B6E770000C39FCE /* CNodeJS-OCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F985E201B6E770000C39FCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F985E341B6E770000C39FCE /* Main.storyboard in Resources */,
+				2F85E0421B6E7B7100F17FFB /* MaterialIcons-Regular.ttf in Resources */,
+				2F85E0401B6E7B7100F17FFB /* CNodeJS.plist in Resources */,
+				2F985E391B6E770000C39FCE /* LaunchScreen.xib in Resources */,
+				2F85E0411B6E7B7100F17FFB /* cnodejs.png in Resources */,
+				2F985E361B6E770000C39FCE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F985E3C1B6E770000C39FCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C98AB7CC2CA4B5FA6923D4A2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CNodeJS-OC/Pods-CNodeJS-OC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAB221637C4EBB8E6527D06C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F985E1E1B6E770000C39FCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FB4D8E11B6E7AA500E8E9C5 /* CNodeReply.m in Sources */,
+				2FB4D8E31B6E7AA500E8E9C5 /* CNodeUser.m in Sources */,
+				2F85E0321B6E7B1600F17FFB /* TableViewDataProvider.m in Sources */,
+				2F85E02F1B6E7B1600F17FFB /* MainUserViewController.m in Sources */,
+				2F85E0301B6E7B1600F17FFB /* SwipableViewController.m in Sources */,
+				2F985E2E1B6E770000C39FCE /* CNodeJS_OC.xcdatamodeld in Sources */,
+				2FB4D8EF1B6E7AD500E8E9C5 /* AppDefaults.m in Sources */,
+				2FB4D8F11B6E7AD500E8E9C5 /* NSString+Size.m in Sources */,
+				2F85E02C1B6E7B1600F17FFB /* MainMessageViewController.m in Sources */,
+				2F85E0311B6E7B1600F17FFB /* SwipableViewDataProvider.m in Sources */,
+				2F85E03A1B6E7B4200F17FFB /* IconFontTabBarItem.m in Sources */,
+				2F85E02E1B6E7B1600F17FFB /* MainTabBarController.m in Sources */,
+				2F985E2B1B6E770000C39FCE /* AppDelegate.m in Sources */,
+				2F985E4F1B6E77E300C39FCE /* README.md in Sources */,
+				2F85E0341B6E7B1600F17FFB /* TopicTableViewController.m in Sources */,
+				2FB4D8DF1B6E7AA500E8E9C5 /* CNodeAPI.m in Sources */,
+				2FB4D8F01B6E7AD500E8E9C5 /* Device.m in Sources */,
+				2F85E0331B6E7B1600F17FFB /* TopicDetailViewController.m in Sources */,
+				2FB4D8E01B6E7AA500E8E9C5 /* CNodeBase.m in Sources */,
+				2F985E281B6E770000C39FCE /* main.m in Sources */,
+				2F85E03B1B6E7B4200F17FFB /* TopicViewCell.m in Sources */,
+				2FB4D8E21B6E7AA500E8E9C5 /* CNodeTopic.m in Sources */,
+				2FB4D8F21B6E7AD500E8E9C5 /* UIColor+Hex.m in Sources */,
+				2F85E02D1B6E7B1600F17FFB /* MainNavigationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F985E3A1B6E770000C39FCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F985E451B6E770000C39FCE /* CNodeJS_OCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F985E401B6E770000C39FCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F985E211B6E770000C39FCE /* CNodeJS-OC */;
+			targetProxy = 2F985E3F1B6E770000C39FCE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2F985E321B6E770000C39FCE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F985E331B6E770000C39FCE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2F985E371B6E770000C39FCE /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F985E381B6E770000C39FCE /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F985E461B6E770000C39FCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2F985E471B6E770000C39FCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F985E491B6E770000C39FCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FA9FC8960F7AEE3E1E98019 /* Pods-CNodeJS-OC.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CNodeJS-OC/CNodeJS.pch";
+				INFOPLIST_FILE = "CNodeJS-OC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2F985E4A1B6E770000C39FCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EB0F79CEBFEEA6729EBA027 /* Pods-CNodeJS-OC.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CNodeJS-OC/CNodeJS.pch";
+				INFOPLIST_FILE = "CNodeJS-OC/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2F985E4C1B6E770000C39FCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CNodeJS-OCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNodeJS-OC.app/CNodeJS-OC";
+			};
+			name = Debug;
+		};
+		2F985E4D1B6E770000C39FCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CNodeJS-OCTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNodeJS-OC.app/CNodeJS-OC";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F985E1D1B6E76FF00C39FCE /* Build configuration list for PBXProject "CNodeJS-OC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F985E461B6E770000C39FCE /* Debug */,
+				2F985E471B6E770000C39FCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F985E481B6E770000C39FCE /* Build configuration list for PBXNativeTarget "CNodeJS-OC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F985E491B6E770000C39FCE /* Debug */,
+				2F985E4A1B6E770000C39FCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F985E4B1B6E770000C39FCE /* Build configuration list for PBXNativeTarget "CNodeJS-OCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F985E4C1B6E770000C39FCE /* Debug */,
+				2F985E4D1B6E770000C39FCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2F985E2C1B6E770000C39FCE /* CNodeJS_OC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2F985E2D1B6E770000C39FCE /* CNodeJS_OC.xcdatamodel */,
+			);
+			currentVersion = 2F985E2D1B6E770000C39FCE /* CNodeJS_OC.xcdatamodel */;
+			path = CNodeJS_OC.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2F985E1A1B6E76FF00C39FCE /* Project object */;
+}
