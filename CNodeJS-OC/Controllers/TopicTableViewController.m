@@ -101,7 +101,7 @@ static NSString *cellIdentifier = @"topicTableCellIdentifier";
 //    CGSize baseSize = [@"test" calculateSize:limitSize font:cell.titleLabel.font];
 //    CGSize resultSize = [topic.title calculateSize:limitSize font:cell.titleLabel.font];
 //    return 1 + size.height + (resultSize.height - baseSize.height);
-    return 80;
+    return 100;
 }
 
 

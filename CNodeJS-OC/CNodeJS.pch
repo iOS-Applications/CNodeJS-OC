@@ -18,5 +18,6 @@
 #import "CNodeAPI.h"
 #import "DateTools.h"
 #import "NSString+Size.h"
+#import "Masonry.h"
 
 #endif

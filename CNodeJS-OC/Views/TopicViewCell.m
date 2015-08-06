@@ -45,7 +45,7 @@
     
     _authorImage = [UIImageView new];
     _authorImage.layer.masksToBounds = YES;
-    _authorImage.layer.cornerRadius = 3.0;
+    _authorImage.layer.cornerRadius = 15,0;
     _authorImage.layer.rasterizationScale = [UIScreen mainScreen].scale;
     _authorImage.layer.shouldRasterize = YES;
     _authorImage.clipsToBounds = YES;
@@ -55,8 +55,8 @@
     _titleLabel.contentMode = UIViewContentModeScaleAspectFill;
     _titleLabel.font = [UIFont systemFontOfSize:14.0];
     _titleLabel.textColor = [UIColor colorWithHexString:@"#333333"];
-    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    _titleLabel.numberOfLines = 0;
+    _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    _titleLabel.numberOfLines = 2;
     [self.contentView addSubview:_titleLabel];
     
     _labelView1 = [UIView new];
@@ -89,95 +89,56 @@
     [self.contentView addSubview:_timeLabel];
 }
 
+
 - (void)setViewLayout
 {
-    [[self.contentView subviews] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        view.translatesAutoresizingMaskIntoConstraints = NO;
+    UIView *superView = self;
+    
+    [_authorImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.top.and.left.equalTo(superView).offset(10);
     }];
     
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_authorNameLabel, _authorImage, _titleLabel, _labelView1, _labelView2, _labelView3, _timeLabel, _visitLabel, _replyLabel);
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_authorImage);
+        make.right.equalTo(superView.mas_right).offset(-5);
+        make.left.equalTo(_authorImage.mas_right).offset(10);
+    }];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-12-[_authorImage(30)]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-10-[_authorImage(30)]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
+    [_labelView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_titleLabel.mas_bottom).offset(5);
+        make.left.equalTo(_authorImage.mas_right).offset(10);
+    }];
+
+    [_labelView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_labelView1);
+        make.left.equalTo(_labelView1.mas_right).offset(5);
+    }];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_authorImage]-10-[_titleLabel]-10-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-10-[_titleLabel]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
+    [_labelView3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_labelView2);
+        make.left.equalTo(_labelView2.mas_right).offset(5);
+    }];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_titleLabel]-5-[_labelView1(16)]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_authorImage]-10-[_labelView1]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
+    [_authorNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(superView).offset(-10);
+        make.left.equalTo(_authorImage.mas_right).offset(10);
+    }];
     
+    [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_authorNameLabel);
+        make.right.equalTo(superView).offset(-5);
+    }];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_titleLabel]-5-[_labelView2]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_labelView1]-5-[_labelView2]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
+    [_replyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_timeLabel);
+        make.right.equalTo(_timeLabel.mas_left).offset(-5);
+    }];
     
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_titleLabel]-5-[_labelView3]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_labelView2]-5-[_labelView3]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_labelView1]-5-[_authorNameLabel]-5-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_authorImage]-10-[_authorNameLabel]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_labelView1]-5-[_visitLabel]-5-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_visitLabel]-3-[_replyLabel]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_labelView1]-5-[_replyLabel]-5-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_replyLabel]-7-[_timeLabel]"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_labelView1]-5-[_timeLabel]-5-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[_timeLabel]-10-|"
-                                                                             options:0
-                                                                             metrics:nil
-                                                                               views:viewsDictionary]];
+    [_visitLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_replyLabel);
+        make.right.equalTo(_replyLabel.mas_left).offset(-5);
+    }];
 }
 
 
