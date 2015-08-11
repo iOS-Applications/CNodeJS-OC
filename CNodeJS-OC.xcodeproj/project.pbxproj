@@ -110,6 +110,7 @@
 		2FB4D8EC1B6E7AD500E8E9C5 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Size.m"; path = "Common/NSString+Size.m"; sourceTree = "<group>"; };
 		2FB4D8ED1B6E7AD500E8E9C5 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "Common/UIColor+Hex.h"; sourceTree = "<group>"; };
 		2FB4D8EE1B6E7AD500E8E9C5 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "Common/UIColor+Hex.m"; sourceTree = "<group>"; };
+		2FEFF09C1B773E8700213E79 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		4EB0F79CEBFEEA6729EBA027 /* Pods-CNodeJS-OC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNodeJS-OC.release.xcconfig"; path = "Pods/Target Support Files/Pods-CNodeJS-OC/Pods-CNodeJS-OC.release.xcconfig"; sourceTree = "<group>"; };
 		7FA9FC8960F7AEE3E1E98019 /* Pods-CNodeJS-OC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNodeJS-OC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CNodeJS-OC/Pods-CNodeJS-OC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -483,6 +484,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2F985E331B6E770000C39FCE /* Base */,
+				2FEFF09C1B773E8700213E79 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

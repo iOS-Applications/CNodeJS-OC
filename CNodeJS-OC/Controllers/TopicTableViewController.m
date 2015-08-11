@@ -53,8 +53,6 @@ static NSString *cellIdentifier = @"topicTableCellIdentifier";
     self.tableView.dataSource = self.dataProvider;
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.allowsSelection = NO;
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    self.tableView.estimatedRowHeight = 200;
     self.prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 }
 
@@ -93,14 +91,6 @@ static NSString *cellIdentifier = @"topicTableCellIdentifier";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    TopicViewCell *cell = self.prototypeCell;
-//    CNodeTopic *topic = [self.dataProvider.data objectAtIndex:indexPath.item];
-//    [cell setTopic:topic];
-//    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-//    CGSize limitSize = CGSizeMake(cell.contentView.frame.size.width - 60, 500);
-//    CGSize baseSize = [@"test" calculateSize:limitSize font:cell.titleLabel.font];
-//    CGSize resultSize = [topic.title calculateSize:limitSize font:cell.titleLabel.font];
-//    return 1 + size.height + (resultSize.height - baseSize.height);
     return 100;
 }
 

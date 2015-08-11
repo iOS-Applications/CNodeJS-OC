@@ -14,9 +14,9 @@
 
 @property (nonatomic, strong) UILabel     *authorNameLabel;
 @property (nonatomic, strong) UIImageView *authorImage;
-@property (nonatomic, strong) UIView      *labelView1;
-@property (nonatomic, strong) UIView      *labelView2;
-@property (nonatomic, strong) UIView      *labelView3;
+@property (nonatomic, strong) UILabel     *labelView1;
+@property (nonatomic, strong) UILabel     *labelView2;
+@property (nonatomic, strong) UILabel     *labelView3;
 @property (nonatomic, strong) UILabel     *timeLabel;
 @property (nonatomic, strong) UILabel     *visitLabel;
 @property (nonatomic, strong) UILabel     *replyLabel;
@@ -30,7 +30,6 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self initSubViews];
-        [self setViewLayout];
     }
     return self;
 }
@@ -45,7 +44,7 @@
     
     _authorImage = [UIImageView new];
     _authorImage.layer.masksToBounds = YES;
-    _authorImage.layer.cornerRadius = 15,0;
+    _authorImage.layer.cornerRadius = 15.0;
     _authorImage.layer.rasterizationScale = [UIScreen mainScreen].scale;
     _authorImage.layer.shouldRasterize = YES;
     _authorImage.clipsToBounds = YES;
@@ -53,15 +52,15 @@
     
     _titleLabel = [UILabel new];
     _titleLabel.contentMode = UIViewContentModeScaleAspectFill;
-    _titleLabel.font = [UIFont systemFontOfSize:14.0];
+    _titleLabel.font = [UIFont boldSystemFontOfSize:15.0];
     _titleLabel.textColor = [UIColor colorWithHexString:@"#333333"];
     _titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
     _titleLabel.numberOfLines = 2;
     [self.contentView addSubview:_titleLabel];
     
-    _labelView1 = [UIView new];
-    _labelView2 = [UIView new];
-    _labelView3 = [UIView new];
+    _labelView1 = [UILabel new];
+    _labelView2 = [UILabel new];
+    _labelView3 = [UILabel new];
     [self.contentView addSubview:_labelView1];
     [self.contentView addSubview:_labelView2];
     [self.contentView addSubview:_labelView3];
@@ -87,6 +86,8 @@
     _timeLabel.font = [UIFont systemFontOfSize:12.0];
     _timeLabel.textColor = [UIColor colorWithHexString:@"#777777"];
     [self.contentView addSubview:_timeLabel];
+    
+    [self setViewLayout];
 }
 
 
@@ -106,16 +107,19 @@
     }];
     
     [_labelView1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@30);
         make.top.equalTo(_titleLabel.mas_bottom).offset(5);
         make.left.equalTo(_authorImage.mas_right).offset(10);
     }];
 
     [_labelView2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(_labelView1);
         make.top.equalTo(_labelView1);
         make.left.equalTo(_labelView1.mas_right).offset(5);
     }];
     
     [_labelView3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(_labelView1);
         make.top.equalTo(_labelView2);
         make.left.equalTo(_labelView2.mas_right).offset(5);
     }];
@@ -146,14 +150,13 @@
 {
     _topic = topic;
     _authorNameLabel.text = _topic.author.loginName;
-    [_authorImage sd_setImageWithURL:_topic.author.avatarURL placeholderImage:[UIImage imageNamed:@"head"]];
+    [_authorImage sd_setImageWithURL:_topic.author.avatarURL placeholderImage:[UIImage imageNamed:@"ic_head"]];
     _titleLabel.text = _topic.title;
-    
+    // reset label
     NSMutableArray *labelArray = [NSMutableArray arrayWithArray:@[_labelView1, _labelView2, _labelView3]];
-    [labelArray enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-        [[view subviews] enumerateObjectsUsingBlock:^(UIView *view, NSUInteger idx, BOOL *stop) {
-            [view removeFromSuperview];
-        }];
+    [labelArray enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
+        label.text = @"";
+        label.backgroundColor = [UIColor clearColor];
     }];
     if (_topic.top) {
         [self showCellLabel:@"置顶" type:TopicCellLabelTypeTopGood views:labelArray];
@@ -164,11 +167,10 @@
     if (_topic.tab) {
         [self showCellLabel:_topic.tabName type:TopicCellLabelTypeTab views:labelArray];
     }
-    _visitLabel.text = [NSString stringWithFormat:@"%@%ld", @"", _topic.visitCount];
-    _replyLabel.text = [NSString stringWithFormat:@"%@%ld", @"", _topic.replyCount];
+    _visitLabel.text = [NSString stringWithFormat:@"%@%ld", @"访问", _topic.visitCount];
+    _replyLabel.text = [NSString stringWithFormat:@"%@%ld", @"回复", _topic.replyCount];
 
-    
-    _timeLabel.text =  [NSString stringWithFormat:@"%@%@", @"",
+    _timeLabel.text =  [NSString stringWithFormat:@"%@",
                         _topic.lastReplyAt ? _topic.lastReplyAt.timeAgoSinceNow : _topic.createAt.timeAgoSinceNow];
     
 }
@@ -180,69 +182,51 @@ typedef enum : NSUInteger
     TopicCellLabelTypeTab
 } GenerateTopicCellLabelType;
 
+
 - (void)showCellLabel:(NSString *) text type:(GenerateTopicCellLabelType) type views:(NSMutableArray *) container
 {
-    UILabel *label = [self generateLabel:text type:type];
-    UIView *firstView = container.firstObject;
-    [firstView addSubview:label];
-    [container removeObject:firstView];
-    NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(label);
-    [firstView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[label]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:viewsDictionary]];
-    [firstView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-0-[label(30)]-0-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:viewsDictionary]];
-    
-}
-
-
-- (UILabel *)generateLabel:(NSString *) text type:(GenerateTopicCellLabelType) type
-{
-    UILabel *label = [UILabel new];
-    label.text = text;
-    label.contentMode = UIViewContentModeScaleAspectFill;
-    label.font = [UIFont systemFontOfSize:13.0];
+    UILabel *labelView = container.firstObject;
+    labelView.text = text;
+    labelView.contentMode = UIViewContentModeScaleAspectFill;
+    labelView.font = [UIFont systemFontOfSize:13.0];
     switch (type) {
         case TopicCellLabelTypeTopGood:
-            label.textColor = [UIColor whiteColor];
-            label.backgroundColor = [UIColor colorWithHexString:@"#80bd01"];
+            labelView.textColor = [UIColor whiteColor];
+            labelView.backgroundColor = [UIColor colorWithHexString:@"#80bd01"];
             break;
         case TopicCellLabelTypeTab:
-            label.textColor = [UIColor colorWithHexString:@"#999999"];
-            label.backgroundColor = [UIColor colorWithHexString:@"#e5e5e5"];
+            labelView.textColor = [UIColor colorWithHexString:@"#999999"];
+            labelView.backgroundColor = [UIColor colorWithHexString:@"#e5e5e5"];
             break;
         default:
             break;
     }
-    label.layer.masksToBounds = YES;
-    label.layer.cornerRadius = 2.0;
-    label.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    label.layer.shouldRasterize = YES;
-    label.clipsToBounds = YES;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    return label;
+    labelView.layer.masksToBounds = YES;
+    labelView.layer.cornerRadius = 2.0;
+    labelView.layer.rasterizationScale = [UIScreen mainScreen].scale;
+    labelView.layer.shouldRasterize = YES;
+    labelView.clipsToBounds = YES;
+    labelView.textAlignment = NSTextAlignmentCenter;
+    labelView.translatesAutoresizingMaskIntoConstraints = NO;
+    [container removeObject:labelView];
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    [super setSelected:selected animated:animated];
-    NSMutableArray *array = [NSMutableArray arrayWithArray:[_labelView1 subviews]];
-    [array addObjectsFromArray:[_labelView2 subviews]];
-    [array addObjectsFromArray:[_labelView3 subviews]];
-    [array enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
-        if ([label.text isEqualToString:@"置顶"] || [label.text isEqualToString:@"精华"]) {
-            label.textColor = [UIColor whiteColor];
-            label.backgroundColor = [UIColor colorWithHexString:@"#80bd01"];
-        } else {
-            label.textColor = [UIColor colorWithHexString:@"#999999"];
-            label.backgroundColor = [UIColor colorWithHexString:@"#e5e5e5"];
-        }
-    }];
+//    [super setSelected:selected animated:animated];
+//    NSMutableArray *array = [NSMutableArray arrayWithArray:[_labelView1 subviews]];
+//    [array addObjectsFromArray:[_labelView2 subviews]];
+//    [array addObjectsFromArray:[_labelView3 subviews]];
+//    [array enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
+//        if ([label.text isEqualToString:@"置顶"] || [label.text isEqualToString:@"精华"]) {
+//            label.textColor = [UIColor whiteColor];
+//            label.backgroundColor = [UIColor colorWithHexString:@"#80bd01"];
+//        } else {
+//            label.textColor = [UIColor colorWithHexString:@"#999999"];
+//            label.backgroundColor = [UIColor colorWithHexString:@"#e5e5e5"];
+//        }
+//    }];
 }
 
 @end
