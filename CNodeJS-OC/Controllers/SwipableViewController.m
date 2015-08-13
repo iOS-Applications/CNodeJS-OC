@@ -28,7 +28,7 @@ static CGFloat titleCollectionViewHeight = 30.0f;
 static NSString *titleCollectionViewID = @"titleCollectionViewID";
 static NSString *tableCollectionViewID = @"tableCollectionViewID";
 static NSString *titleTextColor = @"#909090";
-static NSString *titleTextActiveColor = @"#1da037";
+static NSString *titleTextActiveColor = @"#6aa200";
 static NSString *titleViewBackgroundColor = @"#e1e1e1";
 
 
@@ -77,7 +77,6 @@ static NSString *titleViewBackgroundColor = @"#e1e1e1";
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
         CGRect viewRect = CGRectMake(0, [Device statusBarHeight] + [Device navBarHeight] + titleCollectionViewHeight,
                                      [Device width], [Device height] - [Device statusBarHeight] - [Device navBarHeight] - [Device tabBarHeight] - titleCollectionViewHeight + 20);
-        NSLog(@"%f", [Device height]);
         _tableCollectionView = [[UICollectionView alloc] initWithFrame:viewRect collectionViewLayout:flowLayout];
         _tableCollectionView.delegate = self.tableDataProvider;
         _tableCollectionView.dataSource = self.tableDataProvider;
@@ -126,7 +125,7 @@ static NSString *titleViewBackgroundColor = @"#e1e1e1";
         //TODO 这里有一个滑动切换table时label闪一下的Bug，暂时找不到原因
         _titleDataProvider.selectActionBlock = ^(UICollectionView *collectionView, NSIndexPath *currentIndexPath) {
             NSArray *array = [collectionView indexPathsForVisibleItems];
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.1 animations:^{
                 [array enumerateObjectsUsingBlock:^(NSIndexPath *indexPath, NSUInteger idx, BOOL *stop) {
                     if (![currentIndexPath isEqual:indexPath]) {
                         UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
@@ -161,37 +160,36 @@ static NSString *titleViewBackgroundColor = @"#e1e1e1";
         });
         _tableDataProvider.configureBlock = ^(UICollectionViewCell *cell, UITableViewController *controller, NSIndexPath *indexPath) {
             controller.tableView.frame = cell.contentView.frame;
-            NSLog(@"%f,%f,%f,%f", cell.frame.origin.x,cell.frame.origin.y,cell.frame.size.width,cell.frame.size.height);
             [cell.contentView addSubview:controller.tableView];
         };
         __weak SwipableViewController *weakSelf = self;
-        CGFloat colorValue = (CGFloat)0x90 / (CGFloat)0xFF;
-        _tableDataProvider.scrollActionBlock = ^(CGFloat offsetX) {
-            CGFloat scale = ([NSNumber numberWithFloat:offsetX].intValue % [NSNumber numberWithFloat:[Device width]].intValue) / [Device width];
-            NSIndexPath *currentIndexPath = [[weakSelf.titleCollectionView indexPathsForSelectedItems] objectAtIndex:0];
-            CGFloat currentIndexX = currentIndexPath.item * [Device width];
-            NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item + 1 inSection:0];
-            if (offsetX < currentIndexX) {
-                nextIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item - 1 inSection:0];
-            }
-            UICollectionViewCell *currentCell = [weakSelf.titleCollectionView cellForItemAtIndexPath:currentIndexPath];
-            UICollectionViewCell *nextCell = [weakSelf.titleCollectionView cellForItemAtIndexPath:nextIndexPath];
-            UILabel *currentLabel = (UILabel *)currentCell.backgroundView;
-            UILabel *nextLabel = (UILabel *)nextCell.backgroundView;
-            [UIView animateWithDuration:0.3 animations:^{
-                if (offsetX < currentIndexX) {
-                    currentLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * scale, 1 + 0.2 * scale);
-                    currentLabel.textColor = [UIColor colorWithRed:colorValue*(1 - scale) green:colorValue blue:colorValue*(1 - scale) alpha:1.0];
-                    nextLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * (1 - scale), 1 + 0.2 * (1 - scale));
-                    nextLabel.textColor = [UIColor colorWithRed:colorValue * scale green:colorValue blue:colorValue * scale alpha:1.0];
-                } else {
-                    currentLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * (1- scale), 1 + 0.2 * (1- scale));
-                    currentLabel.textColor = [UIColor colorWithRed:colorValue * scale green:colorValue blue:colorValue * scale alpha:1.0];
-                    nextLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * scale, 1 + 0.2 * scale);
-                    nextLabel.textColor = [UIColor colorWithRed:colorValue*(1 - scale) green:colorValue blue:colorValue*(1 - scale) alpha:1.0];
-                }
-            }];
-        };
+//        CGFloat colorValue = (CGFloat)0x90 / (CGFloat)0xFF;
+//        _tableDataProvider.scrollActionBlock = ^(CGFloat offsetX) {
+//            CGFloat scale = ([NSNumber numberWithFloat:offsetX].intValue % [NSNumber numberWithFloat:[Device width]].intValue) / [Device width];
+//            NSIndexPath *currentIndexPath = [[weakSelf.titleCollectionView indexPathsForSelectedItems] objectAtIndex:0];
+//            CGFloat currentIndexX = currentIndexPath.item * [Device width];
+//            NSIndexPath *nextIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item + 1 inSection:0];
+//            if (offsetX < currentIndexX) {
+//                nextIndexPath = [NSIndexPath indexPathForItem:currentIndexPath.item - 1 inSection:0];
+//            }
+//            UICollectionViewCell *currentCell = [weakSelf.titleCollectionView cellForItemAtIndexPath:currentIndexPath];
+//            UICollectionViewCell *nextCell = [weakSelf.titleCollectionView cellForItemAtIndexPath:nextIndexPath];
+//            UILabel *currentLabel = (UILabel *)currentCell.backgroundView;
+//            UILabel *nextLabel = (UILabel *)nextCell.backgroundView;
+//            [UIView animateWithDuration:0.3 animations:^{
+//                if (offsetX < currentIndexX) {
+//                    currentLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * scale, 1 + 0.2 * scale);
+//                    currentLabel.textColor = [UIColor colorWithRed:colorValue*(1 - scale) green:colorValue blue:colorValue*(1 - scale) alpha:1.0];
+//                    nextLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * (1 - scale), 1 + 0.2 * (1 - scale));
+//                    nextLabel.textColor = [UIColor colorWithRed:colorValue * scale green:colorValue blue:colorValue * scale alpha:1.0];
+//                } else {
+//                    currentLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * (1- scale), 1 + 0.2 * (1- scale));
+//                    currentLabel.textColor = [UIColor colorWithRed:colorValue * scale green:colorValue blue:colorValue * scale alpha:1.0];
+//                    nextLabel.transform = CGAffineTransformMakeScale(1 + 0.2 * scale, 1 + 0.2 * scale);
+//                    nextLabel.textColor = [UIColor colorWithRed:colorValue*(1 - scale) green:colorValue blue:colorValue*(1 - scale) alpha:1.0];
+//                }
+//            }];
+//        };
         
         _tableDataProvider.scrolEndlActionBlock = ^(CGFloat offsetX) {
             NSNumber *number = [NSNumber numberWithDouble:round(offsetX / [Device width])];

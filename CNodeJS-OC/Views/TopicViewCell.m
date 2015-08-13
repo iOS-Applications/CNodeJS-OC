@@ -18,7 +18,9 @@
 @property (nonatomic, strong) UILabel     *labelView2;
 @property (nonatomic, strong) UILabel     *labelView3;
 @property (nonatomic, strong) UILabel     *timeLabel;
+@property (nonatomic, strong) UILabel     *visitIcon;
 @property (nonatomic, strong) UILabel     *visitLabel;
+@property (nonatomic, strong) UILabel     *replyIcon;
 @property (nonatomic, strong) UILabel     *replyLabel;
 
 @end
@@ -38,16 +40,16 @@
 {
     _authorNameLabel = [UILabel new];
     _authorNameLabel.contentMode = UIViewContentModeScaleAspectFill;
-    _authorNameLabel.font = [UIFont systemFontOfSize:12.0];
+    _authorNameLabel.font = [UIFont systemFontOfSize:15.0];
     _authorNameLabel.textColor = [UIColor colorWithHexString:@"#68c7f1"];
     [self.contentView addSubview:_authorNameLabel];
     
     _authorImage = [UIImageView new];
-    _authorImage.layer.masksToBounds = YES;
-    _authorImage.layer.cornerRadius = 15.0;
-    _authorImage.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    _authorImage.layer.shouldRasterize = YES;
-    _authorImage.clipsToBounds = YES;
+//    _authorImage.layer.masksToBounds = YES;
+//    _authorImage.layer.cornerRadius = 15.0;
+//    _authorImage.layer.rasterizationScale = [UIScreen mainScreen].scale;
+//    _authorImage.layer.shouldRasterize = YES;
+//    _authorImage.clipsToBounds = YES;
     [self.contentView addSubview:_authorImage];
     
     _titleLabel = [UILabel new];
@@ -75,11 +77,24 @@
     _visitLabel.textColor = [UIColor colorWithHexString:@"#b4b4b4"];
     [self.contentView addSubview:_visitLabel];
     
+    UIFont *iconFont = [[AppDefaults main] iconfontWithSize:15.0];
+    _visitIcon = [UILabel new];
+    _visitIcon.text = @"\U0000E87A";
+    _visitIcon.font = iconFont;
+    _visitIcon.textColor = [UIColor colorWithHexString:@"#b4b4b4"];
+    [self.contentView addSubview:_visitIcon];
+    
     _replyLabel = [UILabel new];
     _replyLabel.contentMode = UIViewContentModeScaleAspectFill;
     _replyLabel.font = [UIFont systemFontOfSize:12.0];
-    _replyLabel.textColor = [UIColor colorWithHexString:@"#9e78c0"];
+    _replyLabel.textColor = [UIColor colorWithHexString:@"#80bd01"];
     [self.contentView addSubview:_replyLabel];
+    
+    _replyIcon = [UILabel new];
+    _replyIcon.text = @"\U0000E15E";
+    _replyIcon.font = iconFont;
+    _replyIcon.textColor = [UIColor colorWithHexString:@"#80bd01"];
+    [self.contentView addSubview:_replyIcon];
     
     _timeLabel = [UILabel new];
     _timeLabel.contentMode = UIViewContentModeScaleAspectFill;
@@ -136,12 +151,22 @@
     
     [_replyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(_timeLabel);
-        make.right.equalTo(_timeLabel.mas_left).offset(-5);
+        make.right.equalTo(_timeLabel.mas_left).offset(-10);
+    }];
+    
+    [_replyIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_replyLabel);
+        make.right.equalTo(_replyLabel.mas_left).offset(-1);
     }];
     
     [_visitLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_replyLabel);
-        make.right.equalTo(_replyLabel.mas_left).offset(-5);
+        make.bottom.equalTo(_replyIcon);
+        make.right.equalTo(_replyIcon.mas_left).offset(-3);
+    }];
+    
+    [_visitIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_visitLabel);
+        make.right.equalTo(_visitLabel.mas_left).offset(-1);
     }];
 }
 
@@ -167,9 +192,9 @@
     if (_topic.tab) {
         [self showCellLabel:_topic.tabName type:TopicCellLabelTypeTab views:labelArray];
     }
-    _visitLabel.text = [NSString stringWithFormat:@"%@%ld", @"访问", _topic.visitCount];
-    _replyLabel.text = [NSString stringWithFormat:@"%@%ld", @"回复", _topic.replyCount];
-
+    
+    _visitLabel.text = [NSString stringWithFormat:@"%ld", _topic.visitCount];
+    _replyLabel.text = [NSString stringWithFormat:@"%ld", _topic.replyCount];
     _timeLabel.text =  [NSString stringWithFormat:@"%@",
                         _topic.lastReplyAt ? _topic.lastReplyAt.timeAgoSinceNow : _topic.createAt.timeAgoSinceNow];
     
